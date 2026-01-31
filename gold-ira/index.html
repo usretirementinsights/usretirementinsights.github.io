@@ -135,6 +135,8 @@
 
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="wrap header">
   <div class="brand">
     <a href="/" aria-label="US Retirement Insights home">
@@ -162,11 +164,11 @@
   </nav>
 </header>
 
-<main class="wrap">
+<main id="main" class="wrap">
 
   <!-- HERO: premium editorial image + negative space -->
   <section class="card" style="margin-top:18px">
-    <div class="heroGrid" style="display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center">
+    <div class="heroGrid">
       <div>
         <h1>Gold IRA Basics: How It Works</h1>
 
@@ -182,7 +184,7 @@
         </p>
       </div>
 
-      <figure class="heroMedia" style="margin:0">
+      <figure class="heroMedia">
         <img
           src="/assets/images/hero-gold-ira-1600x900.webp"
           srcset="
@@ -197,10 +199,9 @@
           loading="eager"
           decoding="async"
           fetchpriority="high"
-          style="width:100%;height:auto;border-radius:18px;display:block"
         />
-        <figcaption class="fine" style="margin-top:10px">
-          Editorial illustration: gold as a stability asset (educational concept).
+        <figcaption class="fine">
+          Gold as a stability asset.
         </figcaption>
       </figure>
     </div>
