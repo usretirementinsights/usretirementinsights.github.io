@@ -19,17 +19,21 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=6" />
 
-  <!-- Preload HERO (better default: 960w often used on mobile/laptops) -->
+  <!-- Preload HERO (better LCP: preload responsive candidates) -->
   <link
     rel="preload"
     as="image"
     href="/assets/images/us-retirement-insights-hero-960.webp"
     type="image/webp"
     fetchpriority="high"
+    imagesrcset="/assets/images/us-retirement-insights-hero-960.webp 960w, /assets/images/us-retirement-insights-hero-1600.webp 1600w"
+    imagesizes="(max-width: 900px) 100vw, 40vw"
   />
 
   <!-- Open Graph -->
@@ -44,14 +48,14 @@
   <meta property="og:image:type" content="image/webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="US Retirement Insights home preview" />
+  <meta property="og:image:alt" content="Minimal institutional editorial visual for a US retirement education homepage" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides" />
   <meta name="twitter:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation considerations." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
-  <meta name="twitter:image:alt" content="US Retirement Insights home preview" />
+  <meta name="twitter:image:alt" content="Minimal institutional editorial visual for a US retirement education homepage" />
 
   <!-- JSON-LD: Organization + WebSite + WebPage -->
   <script type="application/ld+json">
