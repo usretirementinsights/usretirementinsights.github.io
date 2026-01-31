@@ -13,93 +13,85 @@
   <link rel="canonical" href="https://usretirementinsights.github.io/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Favicons (place these files at repo root) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <!-- Optional (if you add it later): -->
-  <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
 
-  <!-- Force refresh CSS (GitHub Pages cache) -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=3" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
 
-  <!-- Light theme color to match white design -->
   <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)" />
-  <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers to help you make smarter decisions." />
+  <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers." />
   <meta property="og:url" content="https://usretirementinsights.github.io/" />
-  <!-- Optional (add later if you create an image): -->
-  <!-- <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.jpg" /> -->
+  <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="US Retirement Insights home preview" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="US Retirement Insights" />
+  <meta name="twitter:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides" />
   <meta name="twitter:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection." />
-  <!-- Optional (add later if you create an image): -->
-  <!-- <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.jpg" /> -->
+  <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
 
-  <!-- JSON-LD: Organization + WebSite -->
+  <!-- JSON-LD: Organization + Website + WebPage -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@type":"Organization",
-        "name":"US Retirement Insights",
-        "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp",
-        "sameAs":[]
+        "@type": "Organization",
+        "name": "US Retirement Insights",
+        "url": "https://usretirementinsights.github.io/",
+        "logo": "https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
       },
       {
-        "@type":"WebSite",
-        "name":"US Retirement Insights",
-        "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "@type": "WebSite",
+        "name": "US Retirement Insights",
+        "url": "https://usretirementinsights.github.io/",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://usretirementinsights.github.io/#webpage",
+        "url": "https://usretirementinsights.github.io/",
+        "name": "US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)",
+        "description": "US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://usretirementinsights.github.io/"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp",
+          "width": 1200,
+          "height": 630
+        }
       }
     ]
   }
   </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
+  <!-- JSON-LD: Breadcrumb -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
       {
-        "@type":"ListItem",
-        "position":1,
-        "name":"Home",
-        "item":"https://usretirementinsights.github.io/"
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://usretirementinsights.github.io/"
       }
     ]
   }
   </script>
-
-  <style>
-    /* Small additions without touching your main CSS file */
-    .trustRow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.9);
-      font-size:13px;color:#0f172a;
-    }
-    .dot{width:8px;height:8px;border-radius:50%;background:#16a34a}
-    .dot.gold{background:#b59a3a}
-    .dot.gray{background:#64748b}
-    .sr-only{position:absolute;left:-9999px}
-
-    /* Logo icon sizing (safe even if your CSS doesn't define it) */
-    .brandIcon{
-      width:32px;height:32px;display:block;flex:0 0 32px;
-    }
-    .brand a{display:flex;gap:10px;align-items:center;color:inherit;text-decoration:none}
-  </style>
 </head>
 
 <body>
@@ -135,9 +127,7 @@
       <div class="heroText">
         <h1>Protect retirement savings with clear, non-hype guidance.</h1>
 
-        <p class="muted" style="margin:0 0 10px;">
-          <strong>US-focused content.</strong> Retirement rules and regulations vary by country.
-        </p>
+        <p class="muted"><strong>US-focused content.</strong> Retirement rules vary by country.</p>
 
         <p class="lead">
           Inflation, market swings, and policy uncertainty can hit long-term plans.
@@ -155,13 +145,13 @@
           <a class="btn" href="/gold-ira/">Learn how a Gold IRA works</a>
         </div>
 
-        <p class="fine" style="margin-top:6px;">
+        <p class="fine">
           Free information kit. No obligation. Educational purposes only.
         </p>
 
         <p class="fine">
           <strong>Disclosure:</strong> We may earn commissions from partners we recommend.
-          This site provides general information only, not financial advice.
+          This is general information, not financial advice.
         </p>
       </div>
 
@@ -189,11 +179,13 @@
         <p class="muted">What it is, costs, timelines, rules, and common mistakes.</p>
         <a class="link" href="/gold-ira/">Read guide →</a>
       </article>
+
       <article class="card">
         <h3>401(k) rollover</h3>
         <p class="muted">The clean “how it works” path most people actually need.</p>
         <a class="link" href="/401k-to-gold-ira/">Read guide →</a>
       </article>
+
       <article class="card">
         <h3>Goldco review</h3>
         <p class="muted">Our partner review page with clear pros/cons and CTA.</p>
