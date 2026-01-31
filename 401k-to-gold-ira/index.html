@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +9,6 @@
 
   <meta name="author" content="US Retirement Insights" />
   <meta http-equiv="content-language" content="en-US" />
-
   <link rel="canonical" href="https://usretirementinsights.github.io/401k-to-gold-ira/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
@@ -19,11 +18,14 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
-
   <meta name="theme-color" content="#ffffff" />
+
+  <!-- Performance: preload hero (update path if needed) -->
+  <link rel="preload" as="image" href="/assets/images/hero-401k-to-gold-ira-2400x1350.webp" imagesizes="100vw">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="401(k) to Gold IRA Rollover: Rules, Steps & What to Know (2026)" />
   <meta property="og:description" content="Can you roll a 401(k) into a Gold IRA? Learn how a 401(k) to Gold IRA rollover works, the rules, pros and cons, and common mistakes to avoid." />
@@ -31,7 +33,11 @@
   <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-401k-to-gold-ira-1200x630.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="401(k) to Gold IRA rollover guide preview" />
+  <meta property="og:image:alt" content="Abstract institutional visual suggesting a guided 401(k) to Gold IRA rollover process." />
+
+  <!-- Article dates (update when you publish/edit) -->
+  <meta property="article:published_time" content="2026-01-31" />
+  <meta property="article:modified_time" content="2026-01-31" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -46,15 +52,21 @@
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://usretirementinsights.github.io/#org",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        }
       },
       {
         "@type":"WebSite",
+        "@id":"https://usretirementinsights.github.io/#website",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "inLanguage":"en-US",
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"}
       },
       {
         "@type":"WebPage",
@@ -63,12 +75,11 @@
         "name":"401(k) to Gold IRA Rollover: Rules, Steps & What to Know (2026)",
         "description":"Can you roll a 401(k) into a Gold IRA? Learn how a 401(k) to Gold IRA rollover works, the rules, pros and cons, and common mistakes to avoid.",
         "inLanguage":"en-US",
-        "isPartOf":{
-          "@type":"WebSite",
-          "@id":"https://usretirementinsights.github.io/"
-        },
+        "isPartOf":{"@id":"https://usretirementinsights.github.io/#website"},
+        "about":{"@id":"https://usretirementinsights.github.io/#org"},
         "primaryImageOfPage":{
           "@type":"ImageObject",
+          "@id":"https://usretirementinsights.github.io/401k-to-gold-ira/#primaryimage",
           "url":"https://usretirementinsights.github.io/assets/images/og-401k-to-gold-ira-1200x630.webp",
           "width":1200,
           "height":630
@@ -76,25 +87,18 @@
       },
       {
         "@type":"Article",
+        "@id":"https://usretirementinsights.github.io/401k-to-gold-ira/#article",
         "headline":"401(k) to Gold IRA Rollover: Rules, Steps & What to Know (2026)",
         "description":"Can you roll a 401(k) into a Gold IRA? Learn how a 401(k) to Gold IRA rollover works, the rules, pros and cons, and common mistakes to avoid.",
         "inLanguage":"en-US",
-        "mainEntityOfPage":"https://usretirementinsights.github.io/401k-to-gold-ira/",
-        "author":{
-          "@type":"Organization",
-          "name":"US Retirement Insights"
-        },
-        "publisher":{
-          "@type":"Organization",
-          "name":"US Retirement Insights",
-          "logo":{
-            "@type":"ImageObject",
-            "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
-          }
-        },
+        "mainEntityOfPage":{"@id":"https://usretirementinsights.github.io/401k-to-gold-ira/#webpage"},
         "image":[
           "https://usretirementinsights.github.io/assets/images/og-401k-to-gold-ira-1200x630.webp"
-        ]
+        ],
+        "datePublished":"2026-01-31",
+        "dateModified":"2026-01-31",
+        "author":{"@id":"https://usretirementinsights.github.io/#org"},
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"}
       }
     ]
   }
@@ -125,6 +129,8 @@
 
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="wrap header">
   <div class="brand">
     <a href="/" aria-label="US Retirement Insights home">
@@ -149,13 +155,26 @@
     <a href="/goldco/">Goldco</a>
     <a href="/gold-ira/">Gold IRA</a>
     <a href="/disclosures/">Disclosures</a>
+    <a href="/401k-to-gold-ira/" aria-current="page">401(k) Rollover</a>
   </nav>
 </header>
 
-<main class="wrap">
+<main id="main" class="wrap">
 
   <section class="card" style="margin-top:18px">
     <h1>401(k) to Gold IRA Rollover: How It Works</h1>
+
+    <!-- Hero image (optional but recommended) -->
+    <figure class="hero" style="margin:14px 0 6px">
+      <img
+        src="/assets/images/hero-401k-to-gold-ira-2400x1350.webp"
+        width="2400"
+        height="1350"
+        alt="Abstract institutional composition suggesting a guided transition from a 401(k) to Gold IRA stability."
+        loading="eager"
+        decoding="async"
+      />
+    </figure>
 
     <p class="muted">
       Many retirement savers ask whether they can move part of a traditional 401(k) into a Gold IRA.
@@ -176,7 +195,7 @@
     </p>
     <p class="muted">
       Most rollovers happen after leaving an employer, retiring, or switching jobs.
-      Some plans allow in-service rollovers, but this depends on the plan administrator.
+      Some plans allow in-service rollovers, but it depends on the plan administrator.
     </p>
   </section>
 
@@ -189,17 +208,17 @@
       <li>Select IRS-approved precious metals for the account</li>
     </ol>
     <p class="muted">
-      A direct rollover is generally preferred because it helps avoid taxes or penalties.
+      A direct rollover is generally preferred because it helps reduce the risk of taxes or penalties caused by timing mistakes.
     </p>
   </section>
 
   <section class="card">
     <h2>Gold IRA rollover rules to know</h2>
     <ul>
-      <li>The metals must meet IRS purity standards</li>
-      <li>Assets must be stored with an approved custodian</li>
-      <li>Indirect rollovers may trigger taxes if not completed correctly</li>
-      <li>Contribution and distribution rules still apply</li>
+      <li>Metals must meet IRS purity standards</li>
+      <li>Assets must be stored with an approved custodian/depository</li>
+      <li>Indirect rollovers can trigger taxes if not completed correctly</li>
+      <li>Standard IRA contribution and distribution rules still apply</li>
     </ul>
   </section>
 
@@ -216,19 +235,18 @@
     <h3>Possible drawbacks</h3>
     <ul>
       <li>Custodian and storage fees</li>
-      <li>Less liquidity compared to traditional investments</li>
-      <li>Not suitable for all risk profiles</li>
+      <li>Lower liquidity than many traditional holdings</li>
+      <li>May not fit every timeline or risk profile</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Choosing help for a Gold IRA rollover</h2>
     <p class="muted">
-      Many investors prefer working with a specialist who guides them through the rollover process,
-      paperwork, and IRS rules.
+      Many investors prefer working with a specialist who can help with rollover steps, paperwork, and practical constraints.
     </p>
     <p class="muted">
-      We review one such provider in detail on our Goldco page.
+      We review one provider in detail on our Goldco page.
     </p>
 
     <a class="btn primary" href="/goldco/">Read the full Goldco review</a>
@@ -237,8 +255,8 @@
   <section class="card">
     <h2>Next steps</h2>
     <p class="muted">
-      A 401(k) to Gold IRA rollover is not right for everyone, but understanding the rules is the first step.
-      If you're considering diversification with precious metals, reviewing your options carefully matters.
+      A 401(k) to Gold IRA rollover is not right for everyone, but understanding the rules is a solid first step.
+      If you're considering diversification with precious metals, review options carefully and document decisions.
     </p>
 
     <a class="btn full primary" href="/goldco/">Get the free Gold IRA information kit</a>
