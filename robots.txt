@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usretirementinsights.github.io/sitemap.xml
