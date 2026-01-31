@@ -20,9 +20,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=5" />
 
   <meta name="theme-color" content="#ffffff" />
+
+  <!-- Preload key images (performance) -->
+  <link rel="preload" as="image" href="/assets/images/hero-goldco-review-2400x1350.webp" imagesizes="100vw">
+  <link rel="preload" as="image" href="/assets/images/og-goldco-1200x630.webp">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
@@ -33,7 +37,7 @@
   <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-goldco-1200x630.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Goldco review page preview" />
+  <meta property="og:image:alt" content="Neutral institutional editorial image for an independent Goldco review page" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -41,22 +45,28 @@
   <meta name="twitter:description" content="Pros/cons, who it's best for, fees, and a simple overview of how the process works." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-goldco-1200x630.webp" />
 
-  <!-- JSON-LD: Organization + WebSite + WebPage + Article -->
+  <!-- JSON-LD: Organization + WebSite + WebPage + Article + Review -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://usretirementinsights.github.io/#organization",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        }
       },
       {
         "@type":"WebSite",
+        "@id":"https://usretirementinsights.github.io/#website",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "inLanguage":"en-US",
+        "publisher":{"@id":"https://usretirementinsights.github.io/#organization"}
       },
       {
         "@type":"WebPage",
@@ -65,10 +75,11 @@
         "name":"Goldco Review (2026) | Pros, Cons, Fees, Who It's Best For",
         "description":"A clear Goldco review: pros & cons, who it’s best for, how the process works, fees, and alternatives. Includes free Goldco gold IRA kit.",
         "inLanguage":"en-US",
-        "isPartOf":{
-          "@type":"WebSite",
-          "@id":"https://usretirementinsights.github.io/"
-        },
+        "isPartOf":{"@id":"https://usretirementinsights.github.io/#website"},
+        "about":[
+          {"@type":"Thing","name":"Precious metals IRA"},
+          {"@type":"Thing","name":"401(k) rollover"}
+        ],
         "primaryImageOfPage":{
           "@type":"ImageObject",
           "url":"https://usretirementinsights.github.io/assets/images/og-goldco-1200x630.webp",
@@ -78,25 +89,32 @@
       },
       {
         "@type":"Article",
+        "@id":"https://usretirementinsights.github.io/goldco/#article",
         "headline":"Goldco Review (2026) | Pros, Cons, Fees, Who It's Best For",
         "description":"A clear Goldco review: pros & cons, who it’s best for, how the process works, fees, and alternatives. Includes free Goldco gold IRA kit.",
         "inLanguage":"en-US",
-        "mainEntityOfPage":"https://usretirementinsights.github.io/goldco/",
-        "author":{
-          "@type":"Organization",
-          "name":"US Retirement Insights"
-        },
-        "publisher":{
-          "@type":"Organization",
-          "name":"US Retirement Insights",
-          "logo":{
-            "@type":"ImageObject",
-            "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
-          }
-        },
+        "mainEntityOfPage":{"@id":"https://usretirementinsights.github.io/goldco/#webpage"},
+        "datePublished":"2026-01-31",
+        "dateModified":"2026-01-31",
+        "author":{"@id":"https://usretirementinsights.github.io/#organization"},
+        "publisher":{"@id":"https://usretirementinsights.github.io/#organization"},
         "image":[
           "https://usretirementinsights.github.io/assets/images/og-goldco-1200x630.webp"
         ]
+      },
+      {
+        "@type":"Review",
+        "@id":"https://usretirementinsights.github.io/goldco/#review",
+        "name":"Goldco Review",
+        "inLanguage":"en-US",
+        "datePublished":"2026-01-31",
+        "itemReviewed":{
+          "@type":"Organization",
+          "name":"Goldco"
+        },
+        "author":{"@id":"https://usretirementinsights.github.io/#organization"},
+        "publisher":{"@id":"https://usretirementinsights.github.io/#organization"},
+        "reviewBody":"Independent overview of who Goldco may be best for, typical fee buckets to verify in writing, a simple rollover process summary, and comparison paths."
       }
     ]
   }
@@ -207,7 +225,23 @@
 
   <main id="main" class="wrap">
     <section class="card" style="margin-top:18px">
-      <h1 style="margin:0 0 8px;">Goldco Review</h1>
+      <h1 style="margin:0 0 10px;">Goldco Review</h1>
+
+      <!-- Hero image (institutional editorial) -->
+      <figure class="card" style="margin:0 0 14px; padding:0; overflow:hidden;">
+        <img
+          src="/assets/images/hero-goldco-review-2400x1350.webp"
+          width="2400"
+          height="1350"
+          alt="Neutral institutional editorial scene for an independent financial provider review"
+          loading="eager"
+          decoding="async"
+          style="display:block; width:100%; height:auto;"
+        />
+        <figcaption class="fine" style="margin:10px 14px 14px;">
+          Neutral, institutional image used for an independent review context (no brand affiliation implied).
+        </figcaption>
+      </figure>
 
       <p class="fine" style="margin:0 0 14px;">
         <strong>Disclosure:</strong> This page may contain affiliate links. If you take action through our partner, we may earn a commission.
