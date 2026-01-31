@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,22 +9,29 @@
 
   <meta name="author" content="US Retirement Insights" />
   <meta http-equiv="content-language" content="en-US" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
 
   <link rel="canonical" href="https://usretirementinsights.github.io/gold-ira/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Favicons -->
+  <!-- Favicons (repo root) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <!-- CSS (cache-bust) -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
 
-  <!-- Theme -->
-  <meta name="theme-color" content="#ffffff" />
+  <!-- Preload hero image (update path if needed) -->
+  <link rel="preload" as="image"
+        href="/assets/images/hero-gold-ira-2400x1350.webp"
+        imagesrcset="/assets/images/hero-gold-ira-2400x1350.webp 2400w"
+        imagesizes="(max-width: 900px) 100vw, 900px">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Gold IRA Basics | Rules, Costs, Timeline, and Common Mistakes (2026)" />
   <meta property="og:description" content="Learn what a Gold IRA is, how it works, common fees, timelines, rollover basics, and key mistakes to avoid. US-focused educational guide." />
@@ -39,6 +46,7 @@
   <meta name="twitter:title" content="Gold IRA Basics (2026)" />
   <meta name="twitter:description" content="How Gold IRAs work, rollover basics, typical fees, timelines, and common mistakes to avoid." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-gold-ira-1200x630.webp" />
+  <meta name="twitter:image:alt" content="Gold IRA basics guide preview" />
 
   <!-- JSON-LD: Organization + WebSite + WebPage + Article -->
   <script type="application/ld+json">
@@ -47,15 +55,21 @@
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://usretirementinsights.github.io/#org",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        }
       },
       {
         "@type":"WebSite",
+        "@id":"https://usretirementinsights.github.io/#website",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "inLanguage":"en-US",
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"}
       },
       {
         "@type":"WebPage",
@@ -64,10 +78,7 @@
         "name":"Gold IRA Basics | Rules, Costs, Timeline, and Common Mistakes (2026)",
         "description":"Learn what a Gold IRA is, how it works, common fees, timelines, rollover basics, and key mistakes to avoid. US-focused educational guide (not financial advice).",
         "inLanguage":"en-US",
-        "isPartOf":{
-          "@type":"WebSite",
-          "@id":"https://usretirementinsights.github.io/"
-        },
+        "isPartOf":{"@id":"https://usretirementinsights.github.io/#website"},
         "primaryImageOfPage":{
           "@type":"ImageObject",
           "url":"https://usretirementinsights.github.io/assets/images/og-gold-ira-1200x630.webp",
@@ -77,22 +88,15 @@
       },
       {
         "@type":"Article",
+        "@id":"https://usretirementinsights.github.io/gold-ira/#article",
         "headline":"Gold IRA Basics | Rules, Costs, Timeline, and Common Mistakes (2026)",
         "description":"Learn what a Gold IRA is, how it works, common fees, timelines, rollover basics, and key mistakes to avoid. US-focused educational guide (not financial advice).",
         "inLanguage":"en-US",
-        "mainEntityOfPage":"https://usretirementinsights.github.io/gold-ira/",
-        "author":{
-          "@type":"Organization",
-          "name":"US Retirement Insights"
-        },
-        "publisher":{
-          "@type":"Organization",
-          "name":"US Retirement Insights",
-          "logo":{
-            "@type":"ImageObject",
-            "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
-          }
-        },
+        "mainEntityOfPage":{"@id":"https://usretirementinsights.github.io/gold-ira/#webpage"},
+        "datePublished":"2026-01-31",
+        "dateModified":"2026-01-31",
+        "author":{"@id":"https://usretirementinsights.github.io/#org"},
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"},
         "image":[
           "https://usretirementinsights.github.io/assets/images/og-gold-ira-1200x630.webp"
         ]
@@ -155,19 +159,39 @@
 
 <main class="wrap">
 
+  <!-- HERO: premium editorial image + negative space -->
   <section class="card" style="margin-top:18px">
-    <h1>Gold IRA Basics: How It Works</h1>
+    <div class="heroGrid" style="display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center">
+      <div>
+        <h1>Gold IRA Basics: How It Works</h1>
 
-    <p class="muted">
-      A Gold IRA is a type of self-directed IRA that can hold certain IRS-approved precious metals.
-      This guide explains the basics in plain language: what it is, how rollovers usually work, common fees,
-      and mistakes that can create avoidable taxes or frustration.
-    </p>
+        <p class="muted">
+          A Gold IRA is a type of self-directed IRA that can hold certain IRS-approved precious metals.
+          This guide explains the basics in plain language: what it is, how rollovers usually work, common fees,
+          and mistakes that can create avoidable taxes or frustration.
+        </p>
 
-    <p class="fine">
-      <strong>Disclosure:</strong> We may earn commissions from partners we recommend.
-      This site provides general information only, not financial advice.
-    </p>
+        <p class="fine">
+          <strong>Disclosure:</strong> We may earn commissions from partners we recommend.
+          This site provides general information only, not financial advice.
+        </p>
+      </div>
+
+      <figure class="heroMedia" style="margin:0">
+        <img
+          src="/assets/images/hero-gold-ira-2400x1350.webp"
+          width="900"
+          height="506"
+          alt="Matte gold elements in a calm institutional setting, symbolizing stability and long-term wealth preservation"
+          loading="eager"
+          decoding="async"
+          style="width:100%;height:auto;border-radius:18px;display:block"
+        />
+        <figcaption class="fine" style="margin-top:10px">
+          Editorial illustration: gold as a stability asset (educational concept).
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="card">
