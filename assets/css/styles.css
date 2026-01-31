@@ -105,6 +105,8 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   min-height:var(--headerH);
   background:rgba(255,255,255,.96);
   border-bottom:1px solid var(--line);
+  padding-top:4px;
+  padding-bottom:4px;
 }
 
 /* Blur support */
@@ -179,7 +181,11 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
    Hero
    ---------------- */
 .hero{
-  display:grid;grid-template-columns:1.35fr .9fr;gap:18px;margin-top:18px;
+  display:grid;
+  grid-template-columns:1.35fr .9fr;
+  gap:18px;
+  margin-top:18px;
+  align-items:center;
 }
 .hero h1{
   font-size:clamp(30px, 4vw, 44px);
@@ -192,6 +198,27 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   line-height:1.7;
   margin:0 0 16px;
   max-width:62ch;
+}
+
+/* HERO media (missing in your CSS before) */
+.heroMedia{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--panel),var(--panel2));
+  box-shadow:var(--shadow);
+}
+.heroMedia img{
+  width:100%;
+  height:auto;
+  display:block;
+  transform:translateZ(0);
+}
+@media (min-width: 901px){
+  .heroMedia img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
 }
 
 /* Trust badges */
