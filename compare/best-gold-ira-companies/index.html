@@ -39,7 +39,7 @@
   <meta name="twitter:description" content="Compare Gold IRA companies with clear pros, cons, and suitability. Disclosure-first guidance." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD (Org + Website + WebPage + Breadcrumbs) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -104,6 +104,56 @@
     ]
   }
   </script>
+
+  <!-- JSON-LD (FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How does a Gold IRA work?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A Gold IRA is a self-directed individual retirement account that can hold certain IRS-approved precious metals. Typically, you open the account with an IRA custodian, fund it via transfer or rollover (such as from a 401(k)), select approved metals, and store them with an approved depository. Fees and storage rules vary by provider."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What fees should I expect with a Gold IRA?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Common fees include an account setup fee, annual custodial/administration fees, and storage/insurance fees at the depository. Some providers also have markups or spreads on metals. Always ask for the full fee schedule in writing before proceeding."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I roll over a 401(k) into a Gold IRA?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"In many cases, yes. A rollover usually involves moving funds from a former employer 401(k) into a self-directed IRA. Your custodian and provider typically guide the steps. Rules can vary depending on your plan and whether you still work for the employer sponsoring the 401(k)."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Where is Gold IRA gold stored?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Gold held in a Gold IRA is generally stored at an IRS-approved depository (not at home). The depository provides secure storage and insurance. Ask which depository is used and what storage options are available."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do buybacks work if I want to sell later?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Many providers offer a buyback program, but terms vary. Ask how pricing is determined, whether there are minimums, and what the process looks like. Confirm any spreads, shipping, or fees involved before you invest."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -129,6 +179,7 @@
   </div>
 
   <nav class="nav" aria-label="Primary">
+    <a href="/compare/best-gold-ira-companies/" aria-current="page">Compare</a>
     <a href="/goldco/">Goldco</a>
     <a href="/gold-ira/">Gold IRA</a>
     <a href="/401k-to-gold-ira/">401(k) rollover</a>
@@ -176,7 +227,61 @@
     </div>
   </section>
 
-  <section class="card stack12" aria-label="Quick comparison table">
+  <!-- Premium TOC -->
+  <section class="tocCard stack12" aria-label="Table of contents">
+    <div class="tocHead">
+      <div class="tocIcon" aria-hidden="true">≡</div>
+      <h2 class="tocTitle">On this page</h2>
+    </div>
+
+    <p class="tocSub">
+      Jump to the section you need. This guide is educational and disclosure-first.
+    </p>
+
+    <nav aria-label="Page sections">
+      <ul class="tocList">
+        <li><a href="#top-pick"><span class="tocLabel">Top pick</span><span class="tocHint">Start</span></a></li>
+        <li><a href="#quick-comparison"><span class="tocLabel">Quick comparison table</span><span class="tocHint">View</span></a></li>
+        <li><a href="#goldco"><span class="tocLabel">Goldco</span><span class="tocHint">Pros/cons</span></a></li>
+        <li><a href="#augusta"><span class="tocLabel">Augusta</span><span class="tocHint">Who it’s for</span></a></li>
+        <li><a href="#birch"><span class="tocLabel">Birch Gold</span><span class="tocHint">Options</span></a></li>
+        <li><a href="#how-to-choose"><span class="tocLabel">How to choose</span><span class="tocHint">Checklist</span></a></li>
+        <li><a href="#faq"><span class="tocLabel">FAQ</span><span class="tocHint">Answers</span></a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- Top pick -->
+  <section id="top-pick" class="card topPick stack12" aria-label="Top pick">
+    <h2 class="hTight">Top pick: Goldco</h2>
+
+    <p class="muted">
+      If you want the simplest path with guided rollover help, Goldco is usually the easiest starting point for first-time Gold IRA investors.
+    </p>
+
+    <div class="trustRow" aria-label="Top pick highlights" role="list">
+      <span class="badge" role="listitem"><span class="dot"></span>Guided rollover support</span>
+      <span class="badge" role="listitem"><span class="dot gold"></span>Beginner-friendly</span>
+      <span class="badge" role="listitem"><span class="dot gray"></span>Clear next steps</span>
+    </div>
+
+    <ul>
+      <li><strong>Best for:</strong> first-time investors who want help with the rollover steps.</li>
+      <li><strong>What to verify:</strong> total fees (setup + annual + storage) and buyback terms.</li>
+      <li><strong>Watch-outs:</strong> minimums can be higher than DIY options.</li>
+    </ul>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="/goldco/">Read the Goldco review + free kit →</a>
+      <a class="btn" href="#quick-comparison">Jump to the comparison table</a>
+    </div>
+
+    <p class="fine">
+      <strong>Note:</strong> This is educational content. Always confirm fees and policies directly with the provider.
+    </p>
+  </section>
+
+  <section id="quick-comparison" class="card stack12" aria-label="Quick comparison table">
     <h2>Quick comparison</h2>
     <p class="muted">
       A fast side-by-side view. Always confirm fees and policies directly with the provider before deciding.
@@ -232,19 +337,42 @@
   </section>
 
   <section class="grid stack18" aria-label="Company breakdown">
-    <article class="card">
+    <article id="goldco" class="card">
       <h2 class="hTight">Goldco</h2>
       <p class="muted"><strong>Best for:</strong> Beginners who want a guided rollover experience.</p>
+
       <ul>
         <li>Strong reputation and long operating history</li>
         <li>Dedicated rollover specialists</li>
         <li>Clear buyback program</li>
       </ul>
+
+      <!-- Pros / Cons -->
+      <div class="prosCons stack12" aria-label="Goldco pros and cons">
+        <div class="pcCol">
+          <h3 class="pcTitle">Pros</h3>
+          <ul class="pcList">
+            <li><span class="pcDot good" aria-hidden="true"></span><span><strong>Guided rollover support</strong> for first-time investors.</span></li>
+            <li><span class="pcDot good" aria-hidden="true"></span><span><strong>Clear process</strong> with step-by-step assistance.</span></li>
+            <li><span class="pcDot good" aria-hidden="true"></span><span><strong>Buyback program</strong> is commonly highlighted by customers.</span></li>
+          </ul>
+        </div>
+
+        <div class="pcCol">
+          <h3 class="pcTitle">Cons</h3>
+          <ul class="pcList">
+            <li><span class="pcDot warn" aria-hidden="true"></span><span><strong>Minimums can be higher</strong> than DIY-style options.</span></li>
+            <li><span class="pcDot warn" aria-hidden="true"></span><span><strong>Fees vary</strong>, so confirm the total schedule in writing.</span></li>
+            <li><span class="pcDot warn" aria-hidden="true"></span><span><strong>Sales experience</strong> can depend on who you speak with.</span></li>
+          </ul>
+        </div>
+      </div>
+
       <p class="muted"><strong>Watch-outs:</strong> Minimums can be higher than DIY options.</p>
       <a class="btn primary full" href="/goldco/">Read the full Goldco review →</a>
     </article>
 
-    <article class="card">
+    <article id="augusta" class="card">
       <h2 class="hTight">Augusta Precious Metals</h2>
       <p class="muted"><strong>Best for:</strong> Higher balances and education-first onboarding.</p>
       <ul>
@@ -256,7 +384,7 @@
       <span class="muted">Coming soon (full guide)</span>
     </article>
 
-    <article class="card">
+    <article id="birch" class="card">
       <h2 class="hTight">Birch Gold Group</h2>
       <p class="muted"><strong>Best for:</strong> Flexibility and broader metal options.</p>
       <ul>
@@ -269,7 +397,7 @@
     </article>
   </section>
 
-  <section class="card stack18" aria-label="Selection checklist">
+  <section id="how-to-choose" class="card stack18" aria-label="Selection checklist">
     <h2>How to choose the right Gold IRA company</h2>
     <ul>
       <li>Ask for the <strong>total fee list</strong> (setup, annual, storage, any transaction spreads).</li>
@@ -286,6 +414,63 @@
     <p class="fine">
       <strong>Disclosure:</strong> We may earn commissions from partners we recommend.
       This does not affect our evaluations. This site provides general information only, not financial advice.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="card stack18 faq" aria-label="Frequently asked questions">
+    <h2>FAQ</h2>
+    <p class="muted">Quick answers to common questions. Always confirm details with your custodian/provider.</p>
+
+    <details>
+      <summary>How does a Gold IRA work?</summary>
+      <p>
+        A Gold IRA is a self-directed retirement account that can hold certain IRS-approved precious metals.
+        Usually you open an account with a custodian, fund it via transfer or rollover, select approved metals,
+        then store them with an approved depository.
+      </p>
+    </details>
+
+    <details>
+      <summary>What fees should I expect with a Gold IRA?</summary>
+      <p>
+        Typical fees include an account setup fee, annual custodial/administration fees, and storage/insurance fees.
+        Some providers also have markups/spreads on metals. Ask for the full fee schedule in writing.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can I roll over a 401(k) into a Gold IRA?</summary>
+      <p>
+        Often, yes. Rollovers commonly move funds from a former employer 401(k) into a self-directed IRA.
+        Plan rules vary (especially if you still work for the employer), so confirm your specific plan’s policy.
+      </p>
+    </details>
+
+    <details>
+      <summary>Where is Gold IRA gold stored?</summary>
+      <p>
+        Gold in an IRA is generally stored at an IRS-approved depository, not at home.
+        Ask which depository is used and what storage options are available.
+      </p>
+    </details>
+
+    <details>
+      <summary>How do buybacks work if I want to sell later?</summary>
+      <p>
+        Many providers offer a buyback program, but terms vary. Ask how pricing is determined, whether minimums apply,
+        and what fees/spreads may impact the sale.
+      </p>
+    </details>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="/goldco/">Start with the Goldco review →</a>
+      <a class="btn" href="#quick-comparison">Back to the comparison table</a>
+    </div>
+
+    <p class="fine">
+      <strong>Disclosure:</strong> We may earn commissions from partners featured on this page.
+      This site provides general information only, not financial advice.
     </p>
   </section>
 </main>
