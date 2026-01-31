@@ -365,3 +365,14 @@ html{scroll-behavior:smooth}
   line-height:1.6;
   max-width:90ch;
 }
+
+/* --------------------------------
+   Compare page layout helpers
+   -------------------------------- */
+
+.pageTop{ margin-top:18px; }
+.stack12{ margin-top:12px; }
+.stack18{ margin-top:18px; }
+.hTight{ margin:0 0 10px; }
+
+
