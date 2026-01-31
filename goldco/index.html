@@ -20,12 +20,24 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=6" />
 
   <meta name="theme-color" content="#ffffff" />
 
-  <!-- Preload key images (performance) -->
-  <link rel="preload" as="image" href="/assets/images/hero-goldco-review-2400x1350.webp" imagesizes="100vw">
+  <!-- Preload HERO (with srcset + sizes = best practice) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero-goldco-review-1600x900.webp"
+    imagesrcset="
+      /assets/images/hero-goldco-review-960x540.webp 960w,
+      /assets/images/hero-goldco-review-1600x900.webp 1600w,
+      /assets/images/hero-goldco-review-2400x1350.webp 2400w
+    "
+    imagesizes="(max-width: 768px) 100vw, 1600px"
+  />
+
+  <!-- Preload OG -->
   <link rel="preload" as="image" href="/assets/images/og-goldco-1200x630.webp">
 
   <!-- Open Graph -->
@@ -44,6 +56,7 @@
   <meta name="twitter:title" content="Goldco Review (2026)" />
   <meta name="twitter:description" content="Pros/cons, who it's best for, fees, and a simple overview of how the process works." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-goldco-1200x630.webp" />
+  <meta name="twitter:image:alt" content="Neutral institutional editorial image for an independent Goldco review page" />
 
   <!-- JSON-LD: Organization + WebSite + WebPage + Article + Review -->
   <script type="application/ld+json">
@@ -230,11 +243,18 @@
       <!-- Hero image (institutional editorial) -->
       <figure class="card" style="margin:0 0 14px; padding:0; overflow:hidden;">
         <img
-          src="/assets/images/hero-goldco-review-2400x1350.webp"
-          width="2400"
-          height="1350"
+          src="/assets/images/hero-goldco-review-1600x900.webp"
+          srcset="
+            /assets/images/hero-goldco-review-960x540.webp 960w,
+            /assets/images/hero-goldco-review-1600x900.webp 1600w,
+            /assets/images/hero-goldco-review-2400x1350.webp 2400w
+          "
+          sizes="(max-width: 768px) 100vw, 1600px"
+          width="1600"
+          height="900"
           alt="Neutral institutional editorial scene for an independent financial provider review"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
           style="display:block; width:100%; height:auto;"
         />
@@ -253,6 +273,7 @@
         <a class="btn" href="/gold-ira/">Read: How a Gold IRA works</a>
       </div>
 
+      <!-- The rest of your content stays unchanged -->
       <div class="card toc" aria-label="Table of contents">
         <h2 style="margin:0 0 6px;">On this page</h2>
         <ul>
