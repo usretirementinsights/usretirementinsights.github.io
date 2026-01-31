@@ -3,27 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>US Retirement Insights | Practical guides for protecting retirement</title>
-  <meta name="description" content="Clear, practical insights on retirement planning, inflation protection, 401(k) rollovers, and precious metals IRAs." />
+
+  <title>US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)</title>
+  <meta name="description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers to help you make smarter decisions." />
+
   <link rel="canonical" href="https://usretirementinsights.github.io/" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <!-- Force refresh CSS (GitHub Pages cache) -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=3" />
 
-  <!-- If user has dark mode enabled, this makes it look cleaner in browser UI -->
-  <meta name="theme-color" content="#0b1220" />
+  <!-- Light theme color to match white design -->
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="US Retirement Insights" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)" />
+  <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers to help you make smarter decisions." />
+  <meta property="og:url" content="https://usretirementinsights.github.io/" />
+  <!-- Optional (add later if you create an image): -->
+  <!-- <meta property="og:image" content="https://usretirementinsights.github.io/assets/img/og-home.jpg" /> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="US Retirement Insights" />
+  <meta name="twitter:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection." />
+  <!-- Optional (add later if you create an image): -->
+  <!-- <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/img/og-home.jpg" /> -->
+
+  <!-- JSON-LD: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "name":"US Retirement Insights",
+        "url":"https://usretirementinsights.github.io/",
+        "logo":"https://usretirementinsights.github.io/assets/img/logo.png",
+        "sameAs":[]
+      },
+      {
+        "@type":"WebSite",
+        "name":"US Retirement Insights",
+        "url":"https://usretirementinsights.github.io/",
+        "inLanguage":"en-US"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://usretirementinsights.github.io/"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Small additions without touching your main CSS file */
+    .trustRow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.9);
+      font-size:13px;color:#0f172a;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:#16a34a}
+    .dot.gold{background:#b59a3a}
+    .dot.gray{background:#64748b}
+    .sr-only{position:absolute;left:-9999px}
+  </style>
 </head>
+
 <body>
   <header class="wrap header">
     <div class="brand">
-      <div class="logo">US</div>
+      <div class="logo" aria-label="US Retirement Insights">US</div>
       <div>
         <div class="name">US Retirement Insights</div>
         <div class="tag">Retirement clarity. Inflation realism.</div>
       </div>
     </div>
-    <nav class="nav">
+
+    <nav class="nav" aria-label="Primary">
       <a href="/goldco/">Goldco</a>
       <a href="/gold-ira/">Gold IRA</a>
       <a href="/401k-to-gold-ira/">401(k) rollover</a>
@@ -35,15 +109,33 @@
     <section class="hero">
       <div class="heroText">
         <h1>Protect retirement savings with clear, non-hype guidance.</h1>
+
+        <!-- US-only trust signal -->
+        <p class="muted" style="margin:0 0 10px;">
+          <strong>US-focused content.</strong> Retirement rules and regulations vary by country.
+        </p>
+
         <p class="lead">
           Inflation, market swings, and policy uncertainty can hit long-term plans.
           We publish practical explainers and comparison guides so you can make smarter retirement decisions.
         </p>
 
+        <!-- Trust badges (conversion boost) -->
+        <div class="trustRow" aria-label="Trust signals">
+          <span class="badge"><span class="dot"></span>Educational content</span>
+          <span class="badge"><span class="dot gold"></span>No obligation info kit</span>
+          <span class="badge"><span class="dot gray"></span>Disclosure-first</span>
+        </div>
+
         <div class="ctaRow">
           <a class="btn primary" href="/goldco/">Goldco review + free kit</a>
           <a class="btn" href="/gold-ira/">Learn how a Gold IRA works</a>
         </div>
+
+        <!-- Micro reassurance under CTA -->
+        <p class="fine" style="margin-top:6px;">
+          Free information kit. No obligation. Educational purposes only.
+        </p>
 
         <p class="fine">
           <strong>Disclosure:</strong> We may earn commissions from partners we recommend.
@@ -69,7 +161,7 @@
       </div>
     </section>
 
-    <section class="grid">
+    <section class="grid" aria-label="Core guides">
       <article class="card">
         <h3>Gold IRA basics</h3>
         <p class="muted">What it is, costs, timelines, rules, and common mistakes.</p>
@@ -89,7 +181,7 @@
   </main>
 
   <footer class="wrap footer">
-    <div>© <span id="y"></span> US Retirement Insights</div>
+    <div>© <span id="y"></span> US Retirement Insights. All rights reserved.</div>
     <div class="footerLinks">
       <a href="/about/">About</a>
       <a href="/disclosures/">Disclosures</a>
