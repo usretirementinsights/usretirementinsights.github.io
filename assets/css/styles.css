@@ -7,7 +7,7 @@
   --line:rgba(15,23,42,.10);
 
   /* Quiet luxury */
-  --gold:#b59a3a;       /* gold plus discret */
+  --gold:#b59a3a;       /* gold discret */
   --gold2:#e8d89a;      /* gold light */
   --green:#16a34a;      /* trust green */
   --green2:#22c55e;     /* green light */
@@ -36,7 +36,7 @@ hr{
 }
 ::selection{background:rgba(181,154,58,.25)}
 
-/* Layout container (IMPORTANT) */
+/* Layout container */
 .wrap{max-width:1100px;margin:0 auto;padding:18px 18px}
 
 /* Smooth anchor jumps */
@@ -103,7 +103,7 @@ code{
   flex:0 0 32px;
 }
 
-/* (Optional) keep .logo compatibility */
+/* Optional logo compatibility */
 .logo{
   width:40px;height:40px;
   display:grid;place-items:center;
@@ -380,83 +380,6 @@ code{
 }
 
 /* --------------------------------
-   Premium TOC
-   -------------------------------- */
-.tocCard{
-  position:relative;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:16px;
-  background:linear-gradient(180deg, rgba(255,255,255,.92), var(--panel2));
-  box-shadow:var(--shadow);
-}
-.tocHead{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:0 0 10px;
-}
-.tocIcon{
-  width:30px;
-  height:30px;
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(15,23,42,.10);
-  background:linear-gradient(135deg, rgba(22,163,74,.12), rgba(181,154,58,.12));
-  color:var(--text);
-  flex:0 0 30px;
-}
-.tocTitle{
-  margin:0;
-  font-weight:900;
-  letter-spacing:.2px;
-}
-.tocSub{
-  margin:0 0 10px;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
-  max-width:90ch;
-}
-.tocList{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:8px;
-}
-.tocList a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  text-decoration:none;
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid rgba(15,23,42,.08);
-  background:rgba(255,255,255,.7);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.tocList a:hover{
-  transform:translateY(-1px);
-  box-shadow:var(--shadow2);
-  border-color:rgba(15,23,42,.14);
-}
-.tocLabel{ font-weight:800; color:var(--text); }
-.tocHint{ font-size:12px; color:var(--muted); white-space:nowrap; }
-.tocList a::before{
-  content:"";
-  width:8px;
-  height:8px;
-  border-radius:999px;
-  background:linear-gradient(135deg, var(--green), var(--gold));
-  box-shadow:0 6px 16px rgba(22,163,74,.12);
-  margin-right:10px;
-  flex:0 0 8px;
-}
-
-/* --------------------------------
    Top pick block
    -------------------------------- */
 .topPick{
@@ -511,6 +434,42 @@ code{
 .pcDot.good{ background:linear-gradient(135deg, var(--green), var(--green2)); }
 .pcDot.warn{ background:linear-gradient(135deg, var(--gold), var(--gold2)); }
 
+/* ===================================
+   SIMPLE TOC (like your screenshot)
+   =================================== */
+.tocSimple{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  background:#fff;
+  box-shadow:var(--shadow2);
+  max-width:520px; /* optional */
+}
+.tocSimple h2{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+.tocSimple ul{
+  margin:0;
+  padding-left:22px; /* bullets */
+}
+.tocSimple li{
+  margin:12px 0;
+  color:var(--muted);
+}
+.tocSimple a{
+  color:var(--text);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+.tocSimple a:hover{
+  color:var(--green);
+}
+
 /* --------------------------------
    Responsive
    -------------------------------- */
@@ -521,4 +480,5 @@ code{
   .kv .row{grid-template-columns:1fr}
   .prosCons{grid-template-columns:1fr}
   .table{min-width:720px}
+  .tocSimple{max-width:100%}
 }
