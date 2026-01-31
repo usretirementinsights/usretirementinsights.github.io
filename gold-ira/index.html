@@ -23,11 +23,15 @@
   <!-- CSS (cache-bust) -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
 
-  <!-- Preload hero image (update path if needed) -->
+  <!-- Preload hero image (responsive) -->
   <link rel="preload" as="image"
-        href="/assets/images/hero-gold-ira-2400x1350.webp"
-        imagesrcset="/assets/images/hero-gold-ira-2400x1350.webp 2400w"
-        imagesizes="(max-width: 900px) 100vw, 900px">
+        href="/assets/images/hero-gold-ira-1600x900.webp"
+        imagesrcset="
+          /assets/images/hero-gold-ira-960x540.webp 960w,
+          /assets/images/hero-gold-ira-1600x900.webp 1600w,
+          /assets/images/hero-gold-ira-2400x1350.webp 2400w"
+        imagesizes="(max-width: 900px) 100vw, 900px"
+        fetchpriority="high">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
@@ -40,6 +44,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Gold IRA basics guide preview" />
+  <meta property="og:image:type" content="image/webp" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -179,12 +184,19 @@
 
       <figure class="heroMedia" style="margin:0">
         <img
-          src="/assets/images/hero-gold-ira-2400x1350.webp"
+          src="/assets/images/hero-gold-ira-1600x900.webp"
+          srcset="
+            /assets/images/hero-gold-ira-960x540.webp 960w,
+            /assets/images/hero-gold-ira-1600x900.webp 1600w,
+            /assets/images/hero-gold-ira-2400x1350.webp 2400w
+          "
+          sizes="(max-width: 900px) 100vw, 900px"
           width="900"
           height="506"
           alt="Matte gold elements in a calm institutional setting, symbolizing stability and long-term wealth preservation"
           loading="eager"
           decoding="async"
+          fetchpriority="high"
           style="width:100%;height:auto;border-radius:18px;display:block"
         />
         <figcaption class="fine" style="margin-top:10px">
