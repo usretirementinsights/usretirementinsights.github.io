@@ -30,6 +30,10 @@ html,body{
   background:var(--bg);
   color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.65; /* ✅ premium readability */
+  -webkit-font-smoothing:antialiased; /* ✅ cleaner text */
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
 }
 a{color:inherit}
 img{max-width:100%;height:auto;display:block}
@@ -50,8 +54,14 @@ html{scroll-behavior:smooth}
 :target{scroll-margin-top: calc(var(--headerH) + 16px)}
 
 /* ----------------
-   Base typography
+   Typography (global)
    ---------------- */
+h1,h2,h3{
+  line-height:1.15;
+  letter-spacing:.1px;
+}
+h2{font-size:22px}
+h3{font-size:18px}
 p{margin:0 0 12px}
 ul{margin:0 0 12px;padding-left:18px}
 ol{margin:0 0 12px;padding-left:18px}
@@ -65,6 +75,14 @@ code{
   border-radius:8px;
   border:1px solid rgba(2,6,23,.10);
   background:rgba(2,6,23,.03);
+}
+blockquote{
+  margin:14px 0;
+  padding:12px 14px;
+  border-left:4px solid rgba(181,154,58,.35);
+  background:rgba(2,6,23,.02);
+  border-radius:14px;
+  color:var(--muted);
 }
 
 /* Focus (keyboard) */
@@ -228,12 +246,9 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   }
 }
 
-/* Figcaption: premium (desktop only, subtle) */
+/* Figcaption */
 .heroMedia figcaption{
   margin-top:10px;
-  padding:0;
-  border:0;
-  background:transparent;
   color:var(--muted);
   font-size:12px;
   line-height:1.6;
@@ -388,9 +403,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   line-height:1.7;
 }
 
-/* -------------------------------
-   Compare page helpers
-   ------------------------------- */
+/* Helpers */
 .pageTop{ margin-top:18px; }
 .stack12{ margin-top:12px; }
 .stack18{ margin-top:18px; }
@@ -464,9 +477,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   max-width:90ch;
 }
 
-/* --------------------------------
-   Top pick block
-   -------------------------------- */
+/* Top pick block */
 .topPick{
   border:1px solid rgba(181,154,58,.18);
   background:
@@ -475,9 +486,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
     linear-gradient(180deg, rgba(255,255,255,.98), var(--panel2));
 }
 
-/* --------------------------------
-   Pros / Cons
-   -------------------------------- */
+/* Pros / Cons */
 .prosCons{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -519,9 +528,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 .pcDot.good{ background:linear-gradient(135deg, var(--green), var(--green2)); }
 .pcDot.warn{ background:linear-gradient(135deg, var(--gold), var(--gold2)); }
 
-/* ===================================
-   SIMPLE TOC
-   =================================== */
+/* SIMPLE TOC */
 .tocSimple{
   border:1px solid var(--line);
   border-radius:18px;
@@ -555,9 +562,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   color:var(--green);
 }
 
-/* --------------------------------
-   Responsive
-   -------------------------------- */
+/* Responsive */
 @media (max-width:900px){
   .hero,
   .heroGrid{
@@ -570,10 +575,8 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   .table{min-width:720px}
   .tocSimple{max-width:100%}
 
-  /* ✅ BEST: hide hero figcaption on mobile (premium) */
-  .heroMedia figcaption{
-    display:none;
-  }
+  /* Hide hero figcaption on mobile (clean) */
+  .heroMedia figcaption{ display:none; }
 
   /* Nav: horizontal scroll */
   .nav{
