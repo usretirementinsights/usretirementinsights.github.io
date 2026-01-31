@@ -24,6 +24,17 @@
 
   <meta name="theme-color" content="#ffffff" />
 
+  <!-- Preload hero image (improves LCP) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero-privacy-2400x1350.webp"
+    imagesrcset="/assets/images/hero-privacy-960x540.webp 960w, /assets/images/hero-privacy-2400x1350.webp 2400w"
+    imagesizes="(max-width: 860px) 100vw, 1200px"
+    type="image/webp"
+    fetchpriority="high"
+  />
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
   <meta property="og:type" content="article" />
@@ -135,13 +146,44 @@
   </header>
 
   <main id="main" class="wrap">
-    <section class="card" style="margin-top:18px">
-      <h1>Privacy Policy</h1>
-      <p class="muted">
-        This Privacy Policy explains how information may be collected and used when you visit US Retirement Insights.
-        We aim to keep things simple and transparent.
-      </p>
-      <p class="fine"><strong>Last updated:</strong> 2026-01-31</p>
+    <!-- HERO -->
+    <section class="card" style="margin-top:18px; overflow:hidden; padding:0;">
+      <div
+        role="img"
+        aria-label="Minimalist editorial image representing privacy and user trust"
+        style="
+          aspect-ratio: 16 / 9;
+          width: 100%;
+          background: #ffffff;
+        "
+      >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/assets/images/hero-privacy-960x540.webp 960w, /assets/images/hero-privacy-2400x1350.webp 2400w"
+            sizes="(max-width: 860px) 100vw, 1200px"
+          />
+          <img
+            src="/assets/images/hero-privacy-2400x1350.webp"
+            alt="Minimalist editorial image representing privacy and user trust"
+            width="2400"
+            height="1350"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            style="width:100%; height:100%; object-fit:cover; display:block;"
+          />
+        </picture>
+      </div>
+
+      <div style="padding:18px;">
+        <h1>Privacy Policy</h1>
+        <p class="muted">
+          This Privacy Policy explains how information may be collected and used when you visit US Retirement Insights.
+          We aim to keep things simple and transparent.
+        </p>
+        <p class="fine"><strong>Last updated:</strong> 2026-01-31</p>
+      </div>
     </section>
 
     <section class="grid" style="grid-template-columns:1fr">
