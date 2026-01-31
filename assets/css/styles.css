@@ -1,4 +1,14 @@
+/* ===================================
+   TripGuidely – Quiet Luxury CSS (Full)
+   (inclut: offsets header fiables, liens contenus visibles,
+   dark mode, typo fluide, nav mobile scroll, fallback blur)
+   =================================== */
+
 :root{
+  /* Header sizing for anchor offsets */
+  --headerH: 76px;
+
+  /* Core */
   --bg:#ffffff;
   --panel:#ffffff;
   --panel2:#fbfbfd;
@@ -6,14 +16,32 @@
   --muted:#475569;      /* slate-600 */
   --line:rgba(15,23,42,.10);
 
-  /* Quiet luxury */
+  /* Quiet luxury accents */
   --gold:#b59a3a;       /* gold discret */
   --gold2:#e8d89a;      /* gold light */
   --green:#16a34a;      /* trust green */
   --green2:#22c55e;     /* green light */
 
-  --shadow: 0 10px 30px rgba(15,23,42,.08);
-  --shadow2: 0 8px 20px rgba(15,23,42,.06);
+  /* Shadows (soft/premium) */
+  --shadow: 0 8px 24px rgba(15,23,42,.06);
+  --shadow2: 0 6px 16px rgba(15,23,42,.05);
+}
+
+/* ----------------
+   Dark mode
+   ---------------- */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1220;
+    --panel:#0f172a;
+    --panel2:#0b1324;
+    --text:#e5e7eb;
+    --muted:#a1a1aa;
+    --line:rgba(226,232,240,.10);
+
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --shadow2: 0 8px 20px rgba(0,0,0,.25);
+  }
 }
 
 /* -------------
@@ -41,7 +69,7 @@ hr{
 
 /* Smooth anchor jumps */
 html{scroll-behavior:smooth}
-:target{scroll-margin-top:92px}
+:target{scroll-margin-top: calc(var(--headerH) + 16px)}
 
 /* ----------------
    Base typography
@@ -58,6 +86,14 @@ code{
   border-radius:8px;
   border:1px solid rgba(15,23,42,.08);
   background:rgba(15,23,42,.03);
+}
+
+/* Dark mode refinements for code */
+@media (prefers-color-scheme: dark){
+  code{
+    background:rgba(255,255,255,.06);
+    border-color:rgba(255,255,255,.10);
+  }
 }
 
 /* Focus (keyboard) */
@@ -78,15 +114,46 @@ code{
 }
 
 /* ----------------
+   Content links (better affordance)
+   ---------------- */
+main a:not(.btn):not(.nav a):not(.brand a){
+  color:var(--green);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:2px;
+}
+main a:not(.btn):not(.nav a):not(.brand a):hover{
+  color:var(--text);
+}
+
+/* ----------------
    Header
    ---------------- */
 .header{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   position:sticky;top:0;z-index:10;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(10px);
+  min-height:var(--headerH);
   border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.92);
 }
+
+/* Fallback + support for blur */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
+  .header{
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .header{
+    background:rgba(11,18,32,.72);
+    border-bottom:1px solid var(--line);
+  }
+}
+
 .brand{display:flex;gap:12px;align-items:center}
 
 .brand a{
@@ -143,7 +210,7 @@ code{
 .skip:focus{
   left:10px;
   z-index:999;
-  background:#fff;
+  background:var(--panel);
   padding:10px 12px;
   border:1px solid rgba(15,23,42,.15);
   border-radius:12px;
@@ -156,8 +223,18 @@ code{
 .hero{
   display:grid;grid-template-columns:1.35fr .9fr;gap:18px;margin-top:18px;
 }
-.hero h1{font-size:42px;line-height:1.06;margin:0 0 10px}
-.lead{color:var(--muted);font-size:16px;line-height:1.7;margin:0 0 16px;max-width:62ch}
+.hero h1{
+  font-size:clamp(30px, 4vw, 44px);
+  line-height:1.06;
+  margin:0 0 10px;
+}
+.lead{
+  color:var(--muted);
+  font-size:clamp(15px, 1.6vw, 16px);
+  line-height:1.7;
+  margin:0 0 16px;
+  max-width:62ch;
+}
 
 /* Trust badges */
 .trustRow{
@@ -177,6 +254,10 @@ code{
   font-size:13px;
   color:var(--text);
 }
+@media (prefers-color-scheme: dark){
+  .badge{ background:rgba(255,255,255,.06); }
+}
+
 .dot{
   width:8px;height:8px;
   border-radius:50%;
@@ -193,7 +274,7 @@ code{
   display:inline-block;padding:12px 14px;border-radius:14px;
   border:1px solid var(--line);
   text-decoration:none;
-  background:#fff;
+  background:var(--panel);
   box-shadow:0 1px 0 rgba(15,23,42,.03);
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
@@ -289,6 +370,9 @@ code{
   color:var(--text);
 }
 .pill strong{font-weight:900}
+@media (prefers-color-scheme: dark){
+  .pill{ background:rgba(255,255,255,.06); }
+}
 
 /* FAQ accordion */
 .faq details{
@@ -306,6 +390,9 @@ code{
   margin:10px 0 0;
   color:var(--muted);
   line-height:1.7;
+}
+@media (prefers-color-scheme: dark){
+  .faq details{ background:rgba(255,255,255,.05); }
 }
 
 /* -------------------------------
@@ -342,7 +429,12 @@ code{
   background:rgba(255,255,255,.55);
   position:sticky;
   top:0;
-  backdrop-filter:blur(8px);
+}
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))){
+  .table thead th{
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
 }
 .table tbody td{
   padding:12px 14px;
@@ -371,6 +463,11 @@ code{
 .chip.gold{ color:var(--gold); }
 .chip.neutral{ color:#64748b; }
 
+@media (prefers-color-scheme: dark){
+  .table thead th{ background:rgba(255,255,255,.06); }
+  .chip{ background:rgba(255,255,255,.06); }
+}
+
 .tableNote{
   margin-top:10px;
   color:var(--muted);
@@ -388,6 +485,14 @@ code{
     radial-gradient(900px 220px at 20% 0%, rgba(22,163,74,.10), transparent 55%),
     radial-gradient(900px 240px at 100% 10%, rgba(181,154,58,.10), transparent 55%),
     linear-gradient(180deg, rgba(255,255,255,.96), var(--panel2));
+}
+@media (prefers-color-scheme: dark){
+  .topPick{
+    background:
+      radial-gradient(900px 220px at 20% 0%, rgba(34,197,94,.10), transparent 55%),
+      radial-gradient(900px 240px at 100% 10%, rgba(232,216,154,.10), transparent 55%),
+      linear-gradient(180deg, rgba(15,23,42,.96), var(--panel2));
+  }
 }
 
 /* --------------------------------
@@ -434,14 +539,18 @@ code{
 .pcDot.good{ background:linear-gradient(135deg, var(--green), var(--green2)); }
 .pcDot.warn{ background:linear-gradient(135deg, var(--gold), var(--gold2)); }
 
+@media (prefers-color-scheme: dark){
+  .pcCol{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.08); }
+}
+
 /* ===================================
-   SIMPLE TOC (like your screenshot)
+   SIMPLE TOC
    =================================== */
 .tocSimple{
   border:1px solid var(--line);
   border-radius:18px;
   padding:16px;
-  background:#fff;
+  background:var(--panel);
   box-shadow:var(--shadow2);
   max-width:520px; /* optional */
 }
@@ -476,9 +585,17 @@ code{
 @media (max-width:900px){
   .hero{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
-  .hero h1{font-size:34px}
   .kv .row{grid-template-columns:1fr}
   .prosCons{grid-template-columns:1fr}
   .table{min-width:720px}
   .tocSimple{max-width:100%}
+
+  /* Nav: horizontal scroll (mobile-friendly) */
+  .nav{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:6px;
+  }
+  .nav a{ white-space:nowrap; }
 }
