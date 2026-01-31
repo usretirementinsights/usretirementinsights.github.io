@@ -7,30 +7,32 @@
   <title>US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)</title>
   <meta name="description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers to help you make smarter decisions." />
 
-  <meta name="author" content="US Retirement Insights">
-  <meta http-equiv="content-language" content="en-US">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="color-scheme" content="light">
+  <meta name="author" content="US Retirement Insights" />
+  <meta http-equiv="content-language" content="en-US" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
 
   <link rel="canonical" href="https://usretirementinsights.github.io/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
 
-  <meta name="theme-color" content="#ffffff" />
-
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)" />
   <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection. Clear, non-hype explainers." />
   <meta property="og:url" content="https://usretirementinsights.github.io/" />
   <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
+  <meta property="og:image:secure_url" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
+  <meta property="og:image:type" content="image/webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="US Retirement Insights home preview" />
@@ -48,15 +50,21 @@
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://usretirementinsights.github.io/#organization",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        }
       },
       {
         "@type":"WebSite",
+        "@id":"https://usretirementinsights.github.io/#website",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "inLanguage":"en-US",
+        "publisher":{"@id":"https://usretirementinsights.github.io/#organization"}
       },
       {
         "@type":"WebPage",
@@ -64,10 +72,8 @@
         "url":"https://usretirementinsights.github.io/",
         "name":"US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)",
         "description":"US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation protection.",
-        "isPartOf":{
-          "@type":"WebSite",
-          "@id":"https://usretirementinsights.github.io/"
-        },
+        "isPartOf":{"@id":"https://usretirementinsights.github.io/#website"},
+        "about":{"@id":"https://usretirementinsights.github.io/#organization"},
         "primaryImageOfPage":{
           "@type":"ImageObject",
           "url":"https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp",
@@ -101,7 +107,7 @@
 
 <header class="wrap header">
   <div class="brand">
-    <a href="/" aria-label="US Retirement Insights home">
+    <a href="/" aria-label="US Retirement Insights home" aria-current="page">
       <img
         class="brandIcon"
         src="/assets/images/us-retirement-insights-logo-icon-64.png"
@@ -119,6 +125,7 @@
   </div>
 
   <nav class="nav" aria-label="Primary">
+    <a href="/compare/best-gold-ira-companies/">Compare</a>
     <a href="/goldco/">Goldco</a>
     <a href="/gold-ira/">Gold IRA</a>
     <a href="/401k-to-gold-ira/">401(k) rollover</a>
@@ -138,14 +145,14 @@
         We publish practical explainers and comparison guides so you can make informed retirement decisions.
       </p>
 
-      <div class="trustRow" aria-label="Trust signals">
-        <span class="badge"><span class="dot"></span>Educational content</span>
-        <span class="badge"><span class="dot gold"></span>No obligation info</span>
-        <span class="badge"><span class="dot gray"></span>Disclosure-first</span>
+      <div class="trustRow" aria-label="Trust signals" role="list">
+        <span class="badge" role="listitem"><span class="dot"></span>Educational content</span>
+        <span class="badge" role="listitem"><span class="dot gold"></span>No obligation info</span>
+        <span class="badge" role="listitem"><span class="dot gray"></span>Disclosure-first</span>
       </div>
 
       <div class="ctaRow">
-        <a class="btn primary" href="/goldco/">Goldco review + free kit</a>
+        <a class="btn primary" href="/compare/best-gold-ira-companies/">Compare Gold IRA companies</a>
         <a class="btn" href="/gold-ira/">How a Gold IRA works</a>
       </div>
 
@@ -159,16 +166,16 @@
       <div class="card">
         <h2>Start here</h2>
         <ul>
-          <li><a href="/goldco/">Is Goldco legit? Pros, cons, who it’s for</a></li>
+          <li><a href="/compare/best-gold-ira-companies/">Best Gold IRA companies (comparison)</a></li>
           <li><a href="/401k-to-gold-ira/">401(k) to Gold IRA: step-by-step overview</a></li>
           <li><a href="/inflation-hedge/">Gold as an inflation hedge: what’s true (and what isn’t)</a></li>
         </ul>
       </div>
 
-      <div class="card" style="margin-top:12px">
+      <div class="card stack12">
         <h3>Most read page</h3>
         <p class="muted">If you read one page, read this first.</p>
-        <a class="btn primary full" href="/goldco/">Go to the Goldco review</a>
+        <a class="btn primary full" href="/compare/best-gold-ira-companies/">Go to the comparison guide</a>
       </div>
     </div>
   </section>
@@ -204,7 +211,7 @@
 </footer>
 
 <script>
-document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
