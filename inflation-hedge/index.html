@@ -24,8 +24,12 @@
 
   <meta name="theme-color" content="#ffffff" />
 
+  <!-- Preload OG/hero image (same file) -->
+  <link rel="preload" as="image" href="/assets/images/og-inflation-hedge-1200x630.webp" type="image/webp" fetchpriority="high">
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Gold as an Inflation Hedge | What’s True (and What Isn’t) (2026)" />
   <meta property="og:description" content="A practical, non-hype guide to what gold can do, what it can’t, and how to think about it in retirement planning." />
@@ -33,13 +37,19 @@
   <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-inflation-hedge-1200x630.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Gold as an inflation hedge guide preview" />
+  <meta property="og:image:alt" content="Abstract horizon layers representing long-term inflation awareness and resilience." />
+
+  <!-- Article meta (helpful for some parsers) -->
+  <meta property="article:section" content="Inflation & Risk" />
+  <meta property="article:published_time" content="2026-01-31" />
+  <meta property="article:modified_time" content="2026-01-31" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gold and Inflation (2026)" />
   <meta name="twitter:description" content="What gold can hedge, what it can’t, and how to think about inflation risk in retirement." />
   <meta name="twitter:image" content="https://usretirementinsights.github.io/assets/images/og-inflation-hedge-1200x630.webp" />
+  <meta name="twitter:image:alt" content="Abstract horizon layers symbolizing time, value preservation, and resilience." />
 
   <!-- JSON-LD: Organization + WebSite + WebPage + Article -->
   <script type="application/ld+json">
@@ -48,15 +58,21 @@
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://usretirementinsights.github.io/#org",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "logo":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
+        }
       },
       {
         "@type":"WebSite",
+        "@id":"https://usretirementinsights.github.io/#website",
         "name":"US Retirement Insights",
         "url":"https://usretirementinsights.github.io/",
-        "inLanguage":"en-US"
+        "inLanguage":"en-US",
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"}
       },
       {
         "@type":"WebPage",
@@ -65,10 +81,12 @@
         "name":"Gold as an Inflation Hedge | What’s True (and What Isn’t) (2026)",
         "description":"Does gold really hedge inflation? A practical, non-hype guide to what gold can do, what it can’t, and how to think about it in retirement planning.",
         "inLanguage":"en-US",
-        "isPartOf":{
-          "@type":"WebSite",
-          "@id":"https://usretirementinsights.github.io/"
-        },
+        "isPartOf":{"@id":"https://usretirementinsights.github.io/#website"},
+        "about":[
+          {"@type":"Thing","name":"Inflation risk"},
+          {"@type":"Thing","name":"Gold"},
+          {"@type":"Thing","name":"Retirement planning"}
+        ],
         "primaryImageOfPage":{
           "@type":"ImageObject",
           "url":"https://usretirementinsights.github.io/assets/images/og-inflation-hedge-1200x630.webp",
@@ -78,24 +96,23 @@
       },
       {
         "@type":"Article",
+        "@id":"https://usretirementinsights.github.io/inflation-hedge/#article",
         "headline":"Gold as an Inflation Hedge | What’s True (and What Isn’t) (2026)",
         "description":"Does gold really hedge inflation? A practical, non-hype guide to what gold can do, what it can’t, and how to think about it in retirement planning.",
         "inLanguage":"en-US",
-        "mainEntityOfPage":"https://usretirementinsights.github.io/inflation-hedge/",
-        "author":{
-          "@type":"Organization",
-          "name":"US Retirement Insights"
-        },
-        "publisher":{
-          "@type":"Organization",
-          "name":"US Retirement Insights",
-          "logo":{
-            "@type":"ImageObject",
-            "url":"https://usretirementinsights.github.io/assets/images/us-retirement-insights-logo-icon-1024.webp"
-          }
-        },
+        "mainEntityOfPage":{"@id":"https://usretirementinsights.github.io/inflation-hedge/#webpage"},
+        "datePublished":"2026-01-31",
+        "dateModified":"2026-01-31",
+        "author":{"@id":"https://usretirementinsights.github.io/#org"},
+        "publisher":{"@id":"https://usretirementinsights.github.io/#org"},
         "image":[
           "https://usretirementinsights.github.io/assets/images/og-inflation-hedge-1200x630.webp"
+        ],
+        "keywords":[
+          "gold inflation hedge",
+          "inflation risk retirement",
+          "purchasing power",
+          "portfolio diversification"
         ]
       }
     ]
@@ -159,6 +176,23 @@
   <main id="main" class="wrap">
 
     <section class="card" style="margin-top:18px">
+      <!-- Hero image on-page (matches your editorial prompt) -->
+      <figure style="margin:0 0 14px 0">
+        <img
+          src="/assets/images/og-inflation-hedge-1200x630.webp"
+          width="1200"
+          height="630"
+          alt="Abstract horizon line with layered textures symbolizing time, value preservation, and resilience. Soft white base with subdued trust green and muted gold accents."
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          style="width:100%;height:auto;border-radius:16px"
+        />
+        <figcaption class="fine" style="margin-top:8px">
+          Editorial concept: calm inflation awareness and long-term risk protection (no fear visuals).
+        </figcaption>
+      </figure>
+
       <h1>Gold as an Inflation Hedge: What’s True (and What Isn’t)</h1>
 
       <p class="muted">
