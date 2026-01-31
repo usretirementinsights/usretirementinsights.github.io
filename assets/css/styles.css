@@ -199,11 +199,11 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 
 /* ----------------
    Hero
-   - .heroGrid = 2-column hero layout (text + media)
-   - .hero     = simple hero figure (single image)
+   - .heroGrid = 2-column hero layout (text + media) (optional)
+   - .hero     = homepage hero card (2-column text + media)
    ---------------- */
 
-/* 2-column hero */
+/* Optional 2-column hero utility (if you use it elsewhere) */
 .heroGrid{
   display:grid;
   grid-template-columns:1.15fr .85fr;
@@ -225,21 +225,25 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   max-width:62ch;
 }
 
-/* Simple hero figure (your 401k page image) */
+/* ✅ Homepage hero: make it look like “before” (card + image right) */
 .hero{
-  margin:14px 0 10px;
-}
-.hero img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:18px;
+  margin:18px 0 10px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr; /* text | image */
+  gap:18px;
+  align-items:center;
+
+  padding:18px;
+  border-radius:22px;
   border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.98), var(--panel2));
   box-shadow:var(--shadow);
-  background:linear-gradient(180deg,var(--panel),var(--panel2));
 }
 
-/* HERO media component (used in 2-column hero) */
+/* Keep left column flexible */
+.hero > div:first-child{min-width:0}
+
+/* HERO media component (used in homepage hero) */
 .heroMedia{
   border-radius:18px;
   overflow:hidden;
@@ -249,21 +253,18 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 }
 .heroMedia img{
   width:100%;
-  height:auto;
+  height:100%;
   display:block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+
+  /* 👇 pushes composition slightly to the RIGHT */
+  object-position: 70% 50%;
+
   transform:translateZ(0);
 }
 
-/* Desktop: clean crop */
-@media (min-width: 901px){
-  .heroMedia img,
-  .hero img{
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
-}
-
-/* Figcaption */
+/* Figcaption (if ever used with heroMedia) */
 .heroMedia figcaption{
   margin-top:10px;
   color:var(--muted);
@@ -581,8 +582,10 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 
 /* Responsive */
 @media (max-width:900px){
-  .heroGrid{
+  /* Homepage hero stacks cleanly */
+  .hero{
     grid-template-columns:1fr;
+    padding:16px;
   }
 
   .grid{grid-template-columns:1fr}
@@ -593,6 +596,9 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 
   /* Hide hero figcaption on mobile (clean) */
   .heroMedia figcaption{ display:none; }
+
+  /* Center crop on mobile */
+  .heroMedia img{ object-position: 50% 50%; }
 
   /* Nav: horizontal scroll */
   .nav{
