@@ -18,11 +18,21 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
-
   <meta name="theme-color" content="#ffffff" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMGLDYW3HB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BMGLDYW3HB', { anonymize_ip: true });
+  </script>
 
   <!-- Preload OG/hero image (same file) -->
   <link rel="preload" as="image" href="/assets/images/og-inflation-hedge-1200x630.webp" type="image/webp" fetchpriority="high">
@@ -38,6 +48,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Abstract horizon layers representing long-term inflation awareness and resilience." />
+  <meta property="og:image:type" content="image/webp" />
 
   <!-- Article meta (helpful for some parsers) -->
   <meta property="article:section" content="Inflation & Risk" />
@@ -285,6 +296,24 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4: track outbound clicks (if you add external links later)
+    document.addEventListener('click', function(e){
+      const a = e.target.closest ? e.target.closest('a[href]') : null;
+      if(!a) return;
+
+      const url = new URL(a.href, window.location.href);
+      const isExternal = url.origin !== window.location.origin;
+      if(!isExternal) return;
+
+      if(typeof gtag !== 'function') return;
+
+      gtag('event', 'click_outbound', {
+        event_category: 'outbound',
+        event_label: url.href,
+        transport_type: 'beacon'
+      });
+    }, { passive: true });
   </script>
 </body>
 </html>
