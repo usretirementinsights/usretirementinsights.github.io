@@ -35,12 +35,23 @@
     imagesizes="(max-width: 900px) 100vw, 44vw"
   />
 
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMGLDYW3HB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Privacy-friendly IP anonymization (good for compliance tone)
+    gtag('config', 'G-BMGLDYW3HB', { anonymize_ip: true });
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="US Retirement Insights | Gold IRA & 401(k) Rollover Guides (US)" />
-  <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation considerations. Clear, non-hype explainers." />
+  <meta property="og:description" content="US-focused retirement guides on Gold IRAs, 401(k) rollovers, and inflation considerations. Clear, non-hype explainers to help you evaluate options with clarity." />
   <meta property="og:url" content="https://usretirementinsights.github.io/" />
   <meta property="og:image" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
   <meta property="og:image:secure_url" content="https://usretirementinsights.github.io/assets/images/og-home-1200x630.webp" />
@@ -256,6 +267,24 @@
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  // GA4: track outbound clicks (useful for affiliate links)
+  // This won't interfere with normal navigation.
+  document.addEventListener('click', function(e){
+    const a = e.target.closest ? e.target.closest('a[href]') : null;
+    if(!a) return;
+
+    const url = new URL(a.href, window.location.href);
+    const isExternal = url.origin !== window.location.origin;
+
+    if(isExternal && typeof gtag === 'function'){
+      gtag('event', 'click_outbound', {
+        event_category: 'outbound',
+        event_label: url.href,
+        transport_type: 'beacon'
+      });
+    }
+  }, { passive: true });
 </script>
 </body>
 </html>
