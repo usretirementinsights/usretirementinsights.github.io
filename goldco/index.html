@@ -40,6 +40,15 @@
   <!-- Preload OG -->
   <link rel="preload" as="image" href="/assets/images/og-goldco-1200x630.webp">
 
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMGLDYW3HB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BMGLDYW3HB', { anonymize_ip: true });
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="US Retirement Insights" />
   <meta property="og:type" content="article" />
@@ -442,6 +451,38 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4: track outbound + affiliate clicks (perfect for YOUR_GOLDCO_AFFILIATE_LINK)
+    document.addEventListener('click', function(e){
+      const a = e.target.closest ? e.target.closest('a[href]') : null;
+      if(!a) return;
+
+      const href = a.getAttribute('href') || '';
+      const url = new URL(a.href, window.location.href);
+      const isExternal = url.origin !== window.location.origin;
+
+      if(typeof gtag !== 'function') return;
+
+      // Track external clicks
+      if(isExternal){
+        gtag('event', 'click_outbound', {
+          event_category: 'outbound',
+          event_label: url.href,
+          transport_type: 'beacon'
+        });
+      }
+
+      // Track affiliate intent specifically (adjust later to your real domain)
+      // Works immediately for placeholder links containing "YOUR_GOLDCO_AFFILIATE_LINK"
+      if(href.includes('YOUR_GOLDCO_AFFILIATE_LINK') || /goldco/i.test(url.hostname)){
+        gtag('event', 'affiliate_click', {
+          event_category: 'affiliate',
+          event_label: url.href,
+          affiliate_program: 'goldco',
+          transport_type: 'beacon'
+        });
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
