@@ -7,6 +7,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- CORE MONEY PAGES -->
+  <url>
+    <loc>https://usretirementinsights.github.io/compare/best-gold-ira-companies/</loc>
+    <lastmod>2026-01-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+
   <url>
     <loc>https://usretirementinsights.github.io/goldco/</loc>
     <lastmod>2026-01-30</lastmod>
@@ -14,15 +21,28 @@
   </url>
 
   <url>
+    <loc>https://usretirementinsights.github.io/goldco-alternatives/</loc>
+    <lastmod>2026-01-30</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- EDUCATIONAL TRUST PAGES -->
+  <url>
     <loc>https://usretirementinsights.github.io/gold-ira/</loc>
     <lastmod>2026-01-30</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://usretirementinsights.github.io/is-gold-ira-safe/</loc>
+    <lastmod>2026-01-30</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
     <loc>https://usretirementinsights.github.io/401k-to-gold-ira/</loc>
     <lastmod>2026-01-30</lastmod>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 
   <url>
@@ -31,6 +51,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- LEGAL / TRUST -->
   <url>
     <loc>https://usretirementinsights.github.io/about/</loc>
     <lastmod>2026-01-30</lastmod>
