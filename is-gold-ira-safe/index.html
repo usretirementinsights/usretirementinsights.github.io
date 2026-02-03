@@ -27,6 +27,17 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css?v=6" />
 
+  <!-- Preload hero image (LCP) -->
+  <link rel="preload" as="image"
+        href="/assets/images/gold-ira-safety-documents-1600x900.webp"
+        type="image/webp"
+        imagesrcset="
+          /assets/images/gold-ira-safety-documents-960x540.webp 960w,
+          /assets/images/gold-ira-safety-documents-1600x900.webp 1600w,
+          /assets/images/gold-ira-safety-documents-2400x1350.webp 2400w"
+        imagesizes="(max-width: 900px) 100vw, 900px"
+        fetchpriority="high" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="US Retirement Insights" />
@@ -216,6 +227,7 @@
 
 <main id="main" class="wrap">
 
+  <!-- HERO CARD -->
   <section class="card" style="margin-top:14px">
     <p class="muted" style="margin:0 0 10px"><strong>Retirement Education (U.S.)</strong></p>
 
@@ -229,9 +241,35 @@
       <strong>Last updated:</strong> 2026-02-02 <span aria-hidden="true">•</span> <strong>Topic:</strong> Gold IRA Safety
     </p>
 
-    <p class="fine" style="margin:0">
+    <p class="fine" style="margin:0 0 12px">
       <strong>Educational disclosure:</strong> This page is for general information only and is not financial, legal, or tax advice.
     </p>
+
+    <!-- IMAGE 2 (trust / documents) -->
+    <figure style="margin:0">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            /assets/images/gold-ira-safety-documents-960x540.webp 960w,
+            /assets/images/gold-ira-safety-documents-1600x900.webp 1600w,
+            /assets/images/gold-ira-safety-documents-2400x1350.webp 2400w"
+          sizes="(max-width: 900px) 100vw, 900px"
+        />
+        <img
+          src="/assets/images/gold-ira-safety-documents-1600x900.webp"
+          width="900"
+          height="506"
+          alt="Organized retirement paperwork and a compliance-style folder, suggesting careful verification and due diligence"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </picture>
+      <figcaption class="fine" style="margin-top:8px">
+        Due diligence matters: verify fees, custody, and storage in writing.
+      </figcaption>
+    </figure>
   </section>
 
   <section class="grid" aria-label="On this page" style="margin-top:14px">
@@ -269,6 +307,30 @@
       <h2 id="how-it-works">How a Gold IRA Works (Safety Overview)</h2>
 
       <p>A Gold IRA is a type of self-directed individual retirement account that allows certain physical precious metals to be held within a tax-advantaged retirement structure. From a safety standpoint, its defining feature is that the investor does not personally hold the metals.</p>
+
+      <!-- IMAGE 3 (diagram) placed right after the intro line -->
+      <figure style="margin:14px 0 18px">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              /assets/images/gold-ira-custodian-depository-diagram-1200x675.webp 1200w,
+              /assets/images/gold-ira-custodian-depository-diagram-1600x900.webp 1600w"
+            sizes="(max-width: 900px) 100vw, 900px"
+          />
+          <img
+            src="/assets/images/gold-ira-custodian-depository-diagram-1600x900.webp"
+            width="900"
+            height="506"
+            alt="Simple diagram showing the relationship between the investor, IRA custodian, metals dealer, and approved depository storage"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <figcaption class="fine">
+          A compliant Gold IRA separates roles: custodian administers, dealer sells, depository stores.
+        </figcaption>
+      </figure>
 
       <h3>Role of IRS-approved custodians</h3>
 
