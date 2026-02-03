@@ -19,6 +19,9 @@
   /* Shadows (very subtle) */
   --shadow: 0 10px 26px rgba(2,6,23,.06);
   --shadow2: 0 8px 18px rgba(2,6,23,.05);
+
+  /* Editorial images */
+  --imgRadius:18px;
 }
 
 /* -------------
@@ -580,6 +583,51 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   color:var(--green);
 }
 
+/* -----------------------------
+   Editorial images (Figure / Img)
+   - clean, consistent, no CLS
+   ----------------------------- */
+
+/* Apply consistent "frame" to figures inside main content */
+main figure{
+  border-radius:var(--imgRadius);
+}
+
+/* Images inside content (including Image 2 + Image 3) */
+main figure img{
+  width:100%;
+  height:auto;
+  border-radius:var(--imgRadius);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--panel),var(--panel2));
+  box-shadow:var(--shadow2);
+  overflow:hidden;
+}
+
+/* Captions: calm + editorial */
+main figure figcaption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  max-width:90ch;
+}
+
+/* Prevent huge images from stretching too wide in article cards */
+main .card figure{
+  max-width:960px;
+}
+
+/* Nice spacing when figure sits between paragraphs */
+main figure + p{ margin-top:14px; }
+main p + figure{ margin-top:14px; }
+
+/* Optional: diagrams can be a bit flatter/cleaner */
+main figure.is-diagram img{
+  box-shadow:none;
+  background:#fff;
+}
+
 /* Responsive */
 @media (max-width:900px){
   /* Homepage hero stacks cleanly */
@@ -608,4 +656,8 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
     padding-bottom:6px;
   }
   .nav a{ white-space:nowrap; }
+
+  /* Slightly tighter radius on mobile */
+  :root{ --imgRadius:16px; }
+  main .card figure{ max-width:100%; }
 }
