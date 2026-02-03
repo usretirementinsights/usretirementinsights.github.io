@@ -33,8 +33,8 @@ html,body{
   background:var(--bg);
   color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.65; /* premium readability */
-  -webkit-font-smoothing:antialiased; /* cleaner text */
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
 }
@@ -183,6 +183,27 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 }
 
 /* ----------------
+   Breadcrumbs (NEW)
+   ---------------- */
+.breadcrumbs{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+.breadcrumbs a{
+  color:var(--muted);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:2px;
+}
+.breadcrumbs a:hover{ color:var(--text); }
+
+/* ----------------
    Skip link
    ---------------- */
 .skip{
@@ -202,11 +223,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 
 /* ----------------
    Hero
-   - .heroGrid = 2-column hero layout (text + media) (optional)
-   - .hero     = homepage hero card (2-column text + media)
    ---------------- */
-
-/* Optional 2-column hero utility (if you use it elsewhere) */
 .heroGrid{
   display:grid;
   grid-template-columns:1.15fr .85fr;
@@ -228,11 +245,11 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   max-width:62ch;
 }
 
-/* ✅ Homepage hero: make it look like “before” (card + image right) */
+/* Homepage hero */
 .hero{
   margin:18px 0 10px;
   display:grid;
-  grid-template-columns:1.15fr .85fr; /* text | image */
+  grid-template-columns:1.15fr .85fr;
   gap:18px;
   align-items:center;
 
@@ -242,11 +259,8 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   background:linear-gradient(180deg, rgba(255,255,255,.98), var(--panel2));
   box-shadow:var(--shadow);
 }
-
-/* Keep left column flexible */
 .hero > div:first-child{min-width:0}
 
-/* HERO media component (used in homepage hero) */
 .heroMedia{
   border-radius:18px;
   overflow:hidden;
@@ -260,14 +274,9 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
   display:block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-
-  /* 👇 pushes composition slightly to the RIGHT */
   object-position: 70% 50%;
-
   transform:translateZ(0);
 }
-
-/* Figcaption (if ever used with heroMedia) */
 .heroMedia figcaption{
   margin-top:10px;
   color:var(--muted);
@@ -343,7 +352,12 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 .card h2,.card h3{margin:0 0 10px}
 .card ul{margin:0;padding-left:18px}
 .card ol{margin:0;padding-left:18px}
-.card li{margin:10px 0;color:var(--muted)}
+
+/* ✅ PATCH: Lists in cards should be readable by default */
+.card li{margin:10px 0;color:var(--text)}
+/* If you want muted lists, add class="mutedList" on the UL/OL */
+.mutedList li{ color:var(--muted); }
+
 .muted{color:var(--muted)}
 .fine{
   color:var(--muted);
@@ -584,16 +598,11 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 }
 
 /* -----------------------------
-   Editorial images (Figure / Img)
-   - clean, consistent, no CLS
+   Editorial images
    ----------------------------- */
-
-/* Apply consistent "frame" to figures inside main content */
 main figure{
   border-radius:var(--imgRadius);
 }
-
-/* Images inside content (including Image 2 + Image 3) */
 main figure img{
   width:100%;
   height:auto;
@@ -603,8 +612,6 @@ main figure img{
   box-shadow:var(--shadow2);
   overflow:hidden;
 }
-
-/* Captions: calm + editorial */
 main figure figcaption{
   margin-top:8px;
   color:var(--muted);
@@ -612,17 +619,11 @@ main figure figcaption{
   line-height:1.6;
   max-width:90ch;
 }
-
-/* Prevent huge images from stretching too wide in article cards */
 main .card figure{
   max-width:960px;
 }
-
-/* Nice spacing when figure sits between paragraphs */
 main figure + p{ margin-top:14px; }
 main p + figure{ margin-top:14px; }
-
-/* Optional: diagrams can be a bit flatter/cleaner */
 main figure.is-diagram img{
   box-shadow:none;
   background:#fff;
@@ -630,7 +631,6 @@ main figure.is-diagram img{
 
 /* Responsive */
 @media (max-width:900px){
-  /* Homepage hero stacks cleanly */
   .hero{
     grid-template-columns:1fr;
     padding:16px;
@@ -642,13 +642,9 @@ main figure.is-diagram img{
   .table{min-width:720px}
   .tocSimple{max-width:100%}
 
-  /* Hide hero figcaption on mobile (clean) */
   .heroMedia figcaption{ display:none; }
-
-  /* Center crop on mobile */
   .heroMedia img{ object-position: 50% 50%; }
 
-  /* Nav: horizontal scroll */
   .nav{
     flex-wrap:nowrap;
     overflow-x:auto;
@@ -657,7 +653,6 @@ main figure.is-diagram img{
   }
   .nav a{ white-space:nowrap; }
 
-  /* Slightly tighter radius on mobile */
   :root{ --imgRadius:16px; }
   main .card figure{ max-width:100%; }
 }
@@ -665,8 +660,6 @@ main figure.is-diagram img{
 /* =========================================
    Approval-friendly CTA tuning (Gold IRA)
    ========================================= */
-
-/* A calmer "primary" variant for provider-intent buttons */
 .btn.soft{
   border:1px solid rgba(2,6,23,.12);
   background:linear-gradient(180deg, #ffffff, rgba(248,250,252,.92));
@@ -679,18 +672,12 @@ main figure.is-diagram img{
   transform:translateY(-1px);
   border-color:rgba(2,6,23,.18);
 }
-
-/* Keep your existing primary (green+gold) as the main education CTA */
 .ctaRow .btn.primary{
   box-shadow:0 10px 22px rgba(22,163,74,.14);
 }
-
-/* Make the 3-CTA row feel less "pushy": slightly smaller on desktop */
 .ctaRow .btn{
   padding:11px 13px;
 }
-
-/* On the request-info section, force the provider button to look softer */
 #request-info .btn.primary,
 #request-info .btn.full.primary{
   border:1px solid rgba(2,6,23,.12);
@@ -703,8 +690,6 @@ main figure.is-diagram img{
   box-shadow:0 10px 22px rgba(2,6,23,.08);
   border-color:rgba(2,6,23,.18);
 }
-
-/* Mobile: stack buttons full-width (less clutter, more clarity) */
 @media (max-width:900px){
   .ctaRow{ gap:10px; }
   .ctaRow .btn{
