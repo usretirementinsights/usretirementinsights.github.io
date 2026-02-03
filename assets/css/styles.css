@@ -13,7 +13,7 @@
   /* Accents (no blue) */
   --green:#16a34a;                  /* trust green */
   --green2:#22c55e;                 /* green light */
-  --gold:#b59a3a;                   /* gold discret */
+  --gold:#b59a3a;                   /* gold discreet */
   --gold2:#e8d89a;                  /* gold light */
 
   /* Shadows (very subtle) */
@@ -108,14 +108,14 @@ blockquote{
 /* ----------------
    Content links (green)
    ---------------- */
-main a:not(.btn):not(.nav a):not(.brand a){
+main a:not(.btn):not(.nav a):not(.brand a):not(.breadcrumbs a){
   color:var(--green);
   font-weight:750;
   text-decoration:underline;
   text-underline-offset:3px;
   text-decoration-thickness:2px;
 }
-main a:not(.btn):not(.nav a):not(.brand a):hover{
+main a:not(.btn):not(.nav a):not(.brand a):not(.breadcrumbs a):hover{
   color:var(--text);
 }
 
@@ -183,7 +183,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 }
 
 /* ----------------
-   Breadcrumbs (NEW)
+   Breadcrumbs
    ---------------- */
 .breadcrumbs{
   margin:12px 0 0;
@@ -353,7 +353,7 @@ main a:not(.btn):not(.nav a):not(.brand a):hover{
 .card ul{margin:0;padding-left:18px}
 .card ol{margin:0;padding-left:18px}
 
-/* ✅ PATCH: Lists in cards should be readable by default */
+/* Lists in cards readable by default */
 .card li{margin:10px 0;color:var(--text)}
 /* If you want muted lists, add class="mutedList" on the UL/OL */
 .mutedList li{ color:var(--muted); }
@@ -645,6 +645,7 @@ main figure.is-diagram img{
   .heroMedia figcaption{ display:none; }
   .heroMedia img{ object-position: 50% 50%; }
 
+  /* Nav: horizontal scroll */
   .nav{
     flex-wrap:nowrap;
     overflow-x:auto;
@@ -678,6 +679,8 @@ main figure.is-diagram img{
 .ctaRow .btn{
   padding:11px 13px;
 }
+
+/* On the request-info section, force provider button to look softer */
 #request-info .btn.primary,
 #request-info .btn.full.primary{
   border:1px solid rgba(2,6,23,.12);
@@ -690,6 +693,8 @@ main figure.is-diagram img{
   box-shadow:0 10px 22px rgba(2,6,23,.08);
   border-color:rgba(2,6,23,.18);
 }
+
+/* Mobile: stack buttons full-width */
 @media (max-width:900px){
   .ctaRow{ gap:10px; }
   .ctaRow .btn{
