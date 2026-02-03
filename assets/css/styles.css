@@ -661,3 +661,54 @@ main figure.is-diagram img{
   :root{ --imgRadius:16px; }
   main .card figure{ max-width:100%; }
 }
+
+/* =========================================
+   Approval-friendly CTA tuning (Gold IRA)
+   ========================================= */
+
+/* A calmer "primary" variant for provider-intent buttons */
+.btn.soft{
+  border:1px solid rgba(2,6,23,.12);
+  background:linear-gradient(180deg, #ffffff, rgba(248,250,252,.92));
+  color:var(--text);
+  font-weight:900;
+  box-shadow:0 6px 14px rgba(2,6,23,.06);
+}
+.btn.soft:hover{
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
+  transform:translateY(-1px);
+  border-color:rgba(2,6,23,.18);
+}
+
+/* Keep your existing primary (green+gold) as the main education CTA */
+.ctaRow .btn.primary{
+  box-shadow:0 10px 22px rgba(22,163,74,.14);
+}
+
+/* Make the 3-CTA row feel less "pushy": slightly smaller on desktop */
+.ctaRow .btn{
+  padding:11px 13px;
+}
+
+/* On the request-info section, force the provider button to look softer */
+#request-info .btn.primary,
+#request-info .btn.full.primary{
+  border:1px solid rgba(2,6,23,.12);
+  background:linear-gradient(180deg, #ffffff, rgba(248,250,252,.92));
+  color:var(--text);
+  box-shadow:0 6px 14px rgba(2,6,23,.06);
+}
+#request-info .btn.primary:hover,
+#request-info .btn.full.primary:hover{
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
+  border-color:rgba(2,6,23,.18);
+}
+
+/* Mobile: stack buttons full-width (less clutter, more clarity) */
+@media (max-width:900px){
+  .ctaRow{ gap:10px; }
+  .ctaRow .btn{
+    width:100%;
+    text-align:center;
+  }
+}
