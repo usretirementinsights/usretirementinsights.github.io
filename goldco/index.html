@@ -307,6 +307,7 @@
           <li><a href="#fees">Fee categories to verify</a></li>
           <li><a href="#fees-checklist">Fees checklist (copy/paste)</a></li>
           <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#context-links">Context links (recommended reading)</a></li>
           <li><a href="#alternatives">Alternatives</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#request-info">Request info (optional)</a></li>
@@ -451,12 +452,19 @@
       </ol>
 
       <!-- Context links (cluster) -->
+      <h2 id="context-links">Context links (recommended reading)</h2>
       <p class="muted">
-        Helpful context:
-        <a href="/gold-ira/"><strong>Gold IRA basics</strong></a>,
-        <a href="/401k-to-gold-ira/"><strong>401(k) rollover steps</strong></a>,
-        <a href="/is-gold-ira-safe/"><strong>Safety & risks</strong></a>.
+        Use these guides to compare providers calmly:
       </p>
+      <ul>
+        <li><a href="/gold-ira/"><strong>Gold IRA basics</strong></a></li>
+        <li><a href="/401k-to-gold-ira/"><strong>401(k) rollover steps</strong></a></li>
+        <li><a href="/is-gold-ira-safe/"><strong>Safety & risks</strong></a></li>
+        <li><a href="/gold-ira-fees/"><strong>Gold IRA fees (verify in writing)</strong></a></li>
+        <li><a href="/gold-ira-custodian/"><strong>Custodian explained</strong></a></li>
+        <li><a href="/gold-ira-storage/"><strong>Storage explained</strong></a></li>
+        <li><a href="/gold-ira-rules-irs/"><strong>IRS rules overview</strong></a></li>
+      </ul>
 
       <h2 id="alternatives">Alternatives (depending on your goals)</h2>
       <p class="muted">
@@ -509,7 +517,7 @@
       </p>
 
       <div class="card">
-        <a class="btn primary full" href="YOUR_GOLDCO_AFFILIATE_LINK" rel="nofollow noopener">Request information</a>
+        <a class="btn primary full" href="YOUR_GOLDCO_AFFILIATE_LINK" rel="nofollow sponsored noopener">Request information</a>
         <p class="fine" style="margin:10px 0 0;">
           If you use a link on this page, we may earn compensation. This page is educational content only.
         </p>
@@ -546,7 +554,7 @@
         });
       }
 
-      // Optional: log provider-intent clicks without calling it "affiliate"
+      // Log provider-intent clicks without calling it "affiliate"
       const href = a.getAttribute('href') || '';
       if(href.includes('YOUR_GOLDCO_AFFILIATE_LINK') || /goldco/i.test(url.hostname)){
         gtag('event', 'provider_intent_click', {
